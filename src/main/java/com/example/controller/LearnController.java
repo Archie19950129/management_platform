@@ -43,6 +43,6 @@ public class LearnController {
         params.put("title", title);
         List<LearnResouce> learnList = learnService.queryLearnResouceList(params);
         PageInfo<LearnResouce> pageInfo = new PageInfo<LearnResouce>(learnList);
-
+        // 提交测试
     }
 }
