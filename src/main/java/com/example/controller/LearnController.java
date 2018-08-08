@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,11 +23,19 @@ import java.util.logging.Logger;
 public class LearnController {
     @Autowired
     private LearnService learnService;
-    private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
+//    private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping("")
     public String learn() {
         return "learn-resource";
+    }
+
+    @RequestMapping("/index")
+    public String index() {
+        Map<String, String> param = new HashMap<>();
+        List<Map<String, String>> list = learnService.queryDemoList(param);
+        System.out.println(list.size());
+        return "index";
     }
 
     @RequestMapping(value = "/queryLeanList", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")

@@ -19,4 +19,6 @@ public interface LearnMapper {
     LearnResouce queryLearnResouceList(Long id);
 
     public List<LearnResouce> queryLearnResouceList(Map<String, String> params);
+
+    List<Map<String, String>> queryDemoList(Map<String, String> param);
 }

@@ -15,4 +15,6 @@ public interface LearnService {
     LearnResouce queryLearnResouceById(Long learnResouce);
 
     List<LearnResouce> queryLearnResouceList(Map<String, Object> params);
+
+    List<Map<String, String>> queryDemoList(Map<String, String> param);
 }

@@ -50,5 +50,7 @@
         </foreach>
     </delete>
 
-
+    <select id="queryDemoList" resultType="java.util.Map" parameterType="java.util.Map">
+        select uuid, empname from demo;
+    </select>
 </mapper>
