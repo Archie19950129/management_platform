@@ -24,7 +24,7 @@ spring:
 #        poolPreparedStatements: true
 #        maxOpenPreparedStatements: 20
 mybatis:
-  mapper-locations: classpath:domeMapper/*.xml
+  mapper-locations: classpath:com/*/dao/*.xml
   type-aliases-package: com.example.demain
 
 #pagehelper分页插件
